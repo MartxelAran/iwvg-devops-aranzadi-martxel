@@ -29,7 +29,7 @@ public class Searches {
         UsersDatabase db = new UsersDatabase();
         return db.findAll()
                 .filter(user -> user.getFractions().stream()
-                        .anyMatch(fraction -> fraction.isProper()))
+                        .anyMatch(Fraction::isProper))
                 .map(User::getId)
                 .distinct();
     }
