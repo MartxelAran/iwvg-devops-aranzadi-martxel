@@ -40,13 +40,21 @@ public class UsersDatabase {
                 new Fraction(1, 1)
         );
 
+        // New user with all negative fractions
+        List<Fraction> fractions7 = List.of(
+                new Fraction(-1, -2),
+                new Fraction(-3, -4),
+                new Fraction(-5, -6)
+        );
+
         return Stream.of(
                 new User("1", "Oscar", "Fernandez", fractions1),
                 new User("2", "Ana", "Blanco", fractions2),
                 new User("3", "Oscar", "López", fractions3),
                 new User("4", "Paula", "Torres", fractions4),
                 new User("5", "Antonio", "Blanco", fractions5),
-                new User("6", "Paula", "Torres", fractions6)
+                new User("6", "Paula", "Torres", fractions6),
+                new User("7","Martxel","Aranzadi",fractions7)
         );
     }
 }
