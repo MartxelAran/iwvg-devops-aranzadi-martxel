@@ -25,8 +25,15 @@ public class SearchesTest {
 
     @Test
     void testFindUserIdBySomeProperFraction() {
-        assertEquals(List.of("1", "2", "3", "5","7"),
+        assertEquals(List.of("1", "2", "3", "5", "7"),
                 new Searches().findUserIdBySomeProperFraction()
                         .collect(Collectors.toList()));
+    }
+
+    @Test
+    void testFindFirstProperFractionByUserId_ExistingUser() {
+        Fraction fraction = new Searches().findFirstProperFractionByUserId("2");
+        assertEquals(new Fraction(-1, 5), fraction);
+
     }
 }

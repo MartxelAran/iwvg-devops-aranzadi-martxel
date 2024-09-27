@@ -33,4 +33,16 @@ public class Searches {
                 .map(User::getId)
                 .distinct();
     }
+
+    public Fraction findFirstProperFractionByUserId(String userId) {
+        UsersDatabase db = new UsersDatabase();
+        return db.findAll()
+                .filter(user -> user.getId().equals(userId))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(fraction -> fraction.getNumerator() < fraction.getDenominator())
+                .findFirst()
+                .orElse(null);
+
+    }
+
 }
