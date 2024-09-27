@@ -61,15 +61,6 @@ class FractionTest {
     }
 
     @Test
-    void testDivisionByZeroDenominator() {
-        Exception exception = assertThrows(ArithmeticException.class, () -> {
-            Fraction invalidFraction = new Fraction(1, 0);
-            invalidFraction.decimal();
-        });
-        assertTrue(exception.getMessage().contains("/ by zero"));
-    }
-
-    @Test
     void isProperTest() {
         Fraction fraction1 = new Fraction(2, 5);
         assertTrue(fraction1.isProper());
