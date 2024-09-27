@@ -15,4 +15,11 @@ public class SearchesTest {
                 new Searches().findDecimalImproperFractionByUserName("Ana")
                         .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindUserFamilyNameByAllNegativeSignFractionDistinct() {
+        assertEquals(List.of("Aranzadi"),
+                new Searches().findUserFamilyNameByAllNegativeSignFractionDistinct()
+                        .collect(Collectors.toList()));
+    }
 }
