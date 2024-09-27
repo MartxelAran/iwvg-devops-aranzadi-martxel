@@ -24,4 +24,13 @@ public class Searches {
                 .map(User::getFamilyName)
                 .distinct();
     }
+
+    public Stream<String> findUserIdBySomeProperFraction() {
+        UsersDatabase db = new UsersDatabase();
+        return db.findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isProper()))
+                .map(User::getId)
+                .distinct();
+    }
 }
