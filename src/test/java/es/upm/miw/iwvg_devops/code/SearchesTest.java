@@ -22,4 +22,11 @@ public class SearchesTest {
                 new Searches().findUserFamilyNameByAllNegativeSignFractionDistinct()
                         .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindUserIdBySomeProperFraction() {
+        assertEquals(List.of("1", "2", "3", "5","7"),
+                new Searches().findUserIdBySomeProperFraction()
+                        .collect(Collectors.toList()));
+    }
 }
